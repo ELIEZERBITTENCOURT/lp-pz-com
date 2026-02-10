@@ -1,4 +1,4 @@
-# 🌟 Pazzini Comunicacion - Landing Page
+# Pazzini Comunicacion - Landing Page
 
 <div align="center">
   <h3>Landing Page Profissional para Captação de Leads</h3>
@@ -7,7 +7,7 @@
 
 ---
 
-## 📋 Sumário
+## Sumário
 
 - [Sobre o Projeto](#sobre-o-projeto)
 - [Características](#características)
@@ -25,7 +25,7 @@
 
 ---
 
-## 🎯 Sobre o Projeto
+## Sobre o Projeto
 
 Landing page one-page desenvolvida para a **Pazzini Comunicacion**, empresa especializada em revisão textual, formatação acadêmica e elaboração de textos institucionais. O projeto foi construído com foco em **conversão de leads qualificados**, design profissional e experiência do usuário excepcional.
 
@@ -40,34 +40,34 @@ Landing page one-page desenvolvida para a **Pazzini Comunicacion**, empresa espe
 
 ---
 
-## ✨ Características
+## Características
 
 ### Design e UX
 
-- 🎨 **Design Editorial Refinado**: Tipografia sofisticada com fontes Cormorant Garamond e Crimson Text
-- 🌈 **Paleta de Cores Brand**: Laranja, marrom e branco com gradientes suaves
-- ⚡ **Animações Fluidas**: Transições suaves e micro-interações ao scroll
-- 📱 **Totalmente Responsivo**: Layout adaptável de smartphones a desktops
-- ♿ **Acessibilidade**: Navegação por teclado e suporte a leitores de tela
+- **Design Editorial Refinado**: Tipografia sofisticada com fontes Cormorant Garamond e Crimson Text
+- **Paleta de Cores Brand**: Laranja, marrom e branco com gradientes suaves
+- **Animações Fluidas**: Transições suaves e micro-interações ao scroll
+- **Totalmente Responsivo**: Layout adaptável de smartphones a desktops
+- **Acessibilidade**: Navegação por teclado e suporte a leitores de tela
 
 ### Funcionalidades
 
-- 📝 **Formulário de Contato Inteligente**: Validação em tempo real e envio por e-mail
-- 💬 **Integração WhatsApp**: Botão direto para iniciar conversa
-- 🎯 **CTAs Estratégicos**: Calls-to-action posicionados ao longo da página
-- 📊 **Seções Informativas**: Serviços, benefícios, sobre, depoimentos
-- 🔒 **Privacidade e Segurança**: Garantia de proteção de dados
+- **Formulário de Contato Inteligente**: Validação em tempo real e envio por e-mail
+- **Integração WhatsApp**: Botão direto para iniciar conversa
+- **CTAs Estratégicos**: Calls-to-action posicionados ao longo da página
+- **Seções Informativas**: Serviços, benefícios, sobre, depoimentos
+- **Privacidade e Segurança**: Garantia de proteção de dados
 
 ### Performance e SEO
 
-- 🚀 **Otimização de Performance**: Code splitting e lazy loading
-- 🔍 **SEO Completo**: Meta tags, Schema.org, Open Graph
-- 📈 **Analytics Ready**: Preparado para Google Analytics
-- ⚙️ **PWA Ready**: Manifesto e service workers configuráveis
+- **Otimização de Performance**: Code splitting e lazy loading
+- **SEO Completo**: Meta tags, Schema.org, Open Graph
+- **Analytics Ready**: Preparado para Google Analytics
+- **PWA Ready**: Manifesto e service workers configuráveis
 
 ---
 
-## 🛠 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 ### Core
 
@@ -87,7 +87,7 @@ Landing page one-page desenvolvida para a **Pazzini Comunicacion**, empresa espe
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 pazzini-landing/
@@ -95,27 +95,22 @@ pazzini-landing/
 │   └── favicon.svg
 ├── src/
 │   ├── components/
-│   │   ├── Hero/
-│   │   │   ├── Hero.jsx
-│   │   │   └── Hero.css
-│   │   ├── Services/
-│   │   │   ├── Services.jsx
-│   │   │   └── Services.css
-│   │   ├── About/
-│   │   │   ├── About.jsx
-│   │   │   └── About.css
-│   │   ├── Benefits/
-│   │   │   ├── Benefits.jsx
-│   │   │   └── Benefits.css
-│   │   ├── Testimonials/
-│   │   │   ├── Testimonials.jsx
-│   │   │   └── Testimonials.css
-│   │   ├── Contact/
-│   │   │   ├── Contact.jsx
-│   │   │   └── Contact.css
-│   │   └── Footer/
-│   │       ├── Footer.jsx
-│   │       └── Footer.css
+│   │   ├── Hero.jsx
+│   │   ├── Services.jsx
+│   │   ├── About.jsx
+│   │   ├── Benefits.jsx
+│   │   ├── Testimonials.jsx
+│   │   ├── Contact.jsx
+│   │   └── Footer.jsx
+│   │        
+|   ├── styles/
+|   |     ├── Hero.css
+|   |     ├── Services.css
+|   |     ├── About.css
+|   |     ├── Benefits.css
+|   |     ├── Testimonials.css
+|   |     ├── Contact.css
+|   |     └── Footer.css
 │   ├── App.jsx
 │   ├── main.jsx
 │   └── styles-global.css
@@ -139,7 +134,7 @@ Cada componente segue o princípio de **responsabilidade única**:
 
 ---
 
-## 🚀 Instalação
+## Instalação
 
 ### Pré-requisitos
 
@@ -151,8 +146,8 @@ Cada componente segue o princípio de **responsabilidade única**:
 1. **Clone o repositório**
 
 ```bash
-git clone https://github.com/seu-usuario/pazzini-landing.git
-cd pazzini-landing
+git clone https://github.com/ELIEZERBITTENCOURT/lp-pz-com.git
+cd lp-pz-com
 ```
 
 2. **Instale as dependências**
@@ -179,7 +174,7 @@ http://localhost:3000
 
 ---
 
-## 💻 Uso
+## Uso
 
 ### Desenvolvimento
 
@@ -200,7 +195,7 @@ Os arquivos otimizados serão gerados na pasta `/dist`.
 
 ---
 
-## 🧩 Componentes
+## Componentes
 
 ### Hero Section
 
@@ -272,7 +267,7 @@ Rodapé completo com navegação e informações.
 
 ---
 
-## 🔍 SEO e Performance
+## SEO e Performance
 
 ### Meta Tags Implementadas
 
@@ -286,22 +281,22 @@ Rodapé completo com navegação e informações.
 
 ### Performance
 
-- ⚡ **Code Splitting**: Componentes carregados sob demanda
-- 🖼️ **SVG Inline**: Ícones e ilustrações inline para performance
-- 🎨 **CSS Puro**: Sem overhead de frameworks
-- 📦 **Vite**: Build otimizado e minificado
+- **Code Splitting**: Componentes carregados sob demanda
+- **SVG Inline**: Ícones e ilustrações inline para performance
+- **CSS Puro**: Sem overhead de frameworks
+- **Vite**: Build otimizado e minificado
 
 ### Acessibilidade
 
-- ♿ Navegação por teclado
-- 🔊 Labels semânticos
-- 👁️ Contraste adequado (WCAG AA)
-- 📱 Touch targets apropriados
-- 🎯 Focus visível
+- Navegação por teclado
+- Labels semânticos
+- Contraste adequado (WCAG AA)
+- Touch targets apropriados
+- Focus visível
 
 ---
 
-## 📱 Responsividade
+## Responsividade
 
 ### Breakpoints
 
@@ -313,17 +308,7 @@ Desktop Small: 769px - 1024px
 Desktop: 1025px+
 ```
 
-### Testes Realizados
-
-- ✅ iPhone SE (375px)
-- ✅ iPhone 12 Pro (390px)
-- ✅ iPad (768px)
-- ✅ iPad Pro (1024px)
-- ✅ Desktop (1920px)
-
----
-
-## 📧 Integração com Contato
+## Integração com Contato
 
 ### E-mail
 
@@ -338,10 +323,10 @@ pazzinicomunicacion@gmail.com
 Integração via WhatsApp Web API:
 
 ```javascript
-https://wa.me/5511999999999?text=mensagem
+https://wa.me/5551994103113?text=mensagem
 ```
 
-**⚠️ Importante**: Atualize o número do WhatsApp no componente `Contact.jsx` antes do deploy.
+**Importante**: Atualize o número do WhatsApp no componente `Contact.jsx` antes do deploy.
 
 ### Campos do Formulário
 
@@ -353,7 +338,7 @@ https://wa.me/5511999999999?text=mensagem
 
 ---
 
-## 🎨 Customização
+## Customização
 
 ### Cores da Marca
 
@@ -402,7 +387,7 @@ Edite diretamente nos componentes JSX para atualizar:
 
 ---
 
-## 🚀 Deploy
+## Deploy
 
 ### Opções de Hospedagem
 
@@ -435,7 +420,7 @@ npm run build
 
 ---
 
-## 📊 Monitoramento e Analytics
+## Monitoramento e Analytics
 
 ### Google Analytics
 
@@ -462,7 +447,7 @@ Adicione em `index.html` antes do `</head>`:
 
 ---
 
-## 🔧 Manutenção
+## Manutenção
 
 ### Atualizações Frequentes
 
@@ -481,43 +466,24 @@ v1.2.0 - Integração com CRM
 
 ---
 
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas! Para contribuir:
-
-1. Fork o projeto
-2. Crie uma branch (`git checkout -b feature/NovaFeature`)
-3. Commit suas mudanças (`git commit -m 'Add: Nova feature'`)
-4. Push para a branch (`git push origin feature/NovaFeature`)
-5. Abra um Pull Request
-
----
-
-## 📄 Licença
+## Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
-## 📞 Contato
+## Contato
 
 **Pazzini Comunicacion**
 
-- 📧 E-mail: pazzinicomunicacion@gmail.com
-- 💬 WhatsApp: +55 11 99999-9999
-- 🌐 Website: [em breve]
+- E-mail: pazzinicomunicacion@gmail.com
+- WhatsApp: +55 51 99410-3113
+- Website: [em breve]
 
 ---
 
-## 🙏 Agradecimentos
-
-- Google Fonts pela tipografia
-- Comunidade React
-- Todos os clientes que confiaram na Pazzini
-
----
 
 <div align="center">
-  <p>Desenvolvido com ❤️ para transformar palavras em impacto</p>
-  <p><strong>Pazzini Comunicacion © 2024</strong></p>
+  <p>Desenvolvido para transformar palavras em impacto</p>
+  <p><strong>Pazzini Comunicacion © 2020</strong></p>
 </div>
