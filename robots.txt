@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pazzinicomunicacion.com/sitemap.xml
