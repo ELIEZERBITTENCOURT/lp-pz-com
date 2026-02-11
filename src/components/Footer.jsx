@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/Footer.css';
 import { AlarmCheck, Mail, MapPin, MessageCircle } from 'lucide-react';
+import '../styles/Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,7 +29,7 @@ const Footer = () => {
                 <a href="mailto:pazzinicomunicacion@gmail.com" className="social-link" aria-label="E-mail">
                   <Mail/>
                 </a>
-                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">
+                <a href="https://wa.me/55519994103113" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">
                   <MessageCircle/>
                 </a>
               </div>
@@ -98,7 +98,8 @@ const Footer = () => {
                 </li>
                 <li>
                   <span className="contact-icon"><AlarmCheck size={18}/></span>
-                  <span>Seg - Sex: 9h às 18h</span>
+                  <span>Seg - Sex: 8h às 20h30 <br/> Sáb: 9h às 18h</span>
+
                 </li>
                 <li>
                   <span className="contact-icon"><MapPin size={18}/></span>
