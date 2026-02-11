@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Award, ClockPlus, Handshake, MessageCircleMore, Palette, PencilRuler } from 'lucide-react'
 import '../styles/Benefits.css';
+import { benefitsData } from '../data/api';
 
 const Benefits = () => {
   const [visibleItems, setVisibleItems] = useState([]);
@@ -11,7 +11,6 @@ const Benefits = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Stagger the animation of benefit items
             [0, 1, 2, 3, 4, 5].forEach((index) => {
               setTimeout(() => {
                 setVisibleItems((prev) => [...prev, index]);
@@ -29,46 +28,6 @@ const Benefits = () => {
 
     return () => observer.disconnect();
   }, []);
-
-  const benefits = [
-    {
-      number: '01',
-      title: 'Comunicação Clara',
-      description: 'Textos que transmitem sua mensagem com precisão, eliminando ambiguidades e garantindo compreensão imediata do seu público.',
-      icon:  MessageCircleMore
-
-    },
-    {
-      number: '02',
-      title: 'Credibilidade Profissional',
-      description: 'Materiais impecáveis que reforçam sua imagem profissional e transmitem confiança absoluta ao seu público-alvo.',
-      icon: Award
-    },
-    {
-      number: '03',
-      title: 'Economia de Tempo',
-      description: 'Dedique-se ao que realmente importa para você enquanto cuidamos da qualidade textual dos seus documentos.',
-      icon: ClockPlus
-    },
-    {
-      number: '04',
-      title: 'Adequação às Normas',
-      description: 'Conformidade total com ABNT e outros padrões técnicos exigidos no contexto acadêmico e profissional.',
-      icon: PencilRuler
-    },
-    {
-      number: '05',
-      title: 'Personalização',
-      description: 'Cada projeto é único. Adaptamos nossa abordagem às suas necessidades específicas e ao perfil do seu público-alvo.',
-      icon: Palette
-    },
-    {
-      number: '06',
-      title: 'Suporte Contínuo',
-      description: 'Acompanhamento completo durante todo o processo, com feedback construtivo e orientações personalizadas.',
-      icon: Handshake
-    }
-  ];
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -91,13 +50,13 @@ const Benefits = () => {
         </div>
         
         <div className="benefits-grid">
-          {benefits.map((benefit, index) => (
+          {benefitsData.map((benefit, index) => (
             <div
               key={index}
               className={`benefit-card ${visibleItems.includes(index) ? 'visible' : ''}`}
             >
               <div className="benefit-number">{benefit.number}</div>
-              <div className="benefit-icon"><benefit.icon size={58}/></div>
+              <div className="benefit-icon"><benefit.icon size={58} color="var(--primary-brown)"/></div>
               <h3 className="benefit-title">{benefit.title}</h3>
               <p className="benefit-description">{benefit.description}</p>
               <div className="benefit-line"></div>
@@ -112,7 +71,7 @@ const Benefits = () => {
           </div>
           <div className="cta-content">
             <h3>Pronto para elevar a qualidade dos seus textos?</h3>
-            <p>Solicite um diagnóstico gratuito e descubra como podemos transformar sua comunicação.</p>
+            <p>Solicite um orçamento gratuito e descubra como podemos transformar sua comunicação.</p>
             <button className="btn btn-primary" onClick={scrollToContact}>
               Começar Agora
             </button>
