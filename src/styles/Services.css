@@ -37,14 +37,14 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 32px;
   margin-bottom: var(--spacing-xl);
 }
 
 .service-card {
   background: var(--white);
-  padding: var(--spacing-lg);
+  padding: 32px;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   position: relative;
@@ -53,6 +53,7 @@
   border: 2px solid transparent;
   opacity: 0;
   transform: translateY(40px);
+  min-width: 0;
 }
 
 .service-card.visible {
@@ -82,7 +83,7 @@
   border-color: var(--light-orange);
 }
 
-.card-decoration {
+.service-card .card-decoration {
   position: absolute;
   bottom: -60px;
   right: -60px;
@@ -91,17 +92,18 @@
   border-radius: 50%;
   opacity: 0.08;
   transition: all var(--transition-slow);
+  pointer-events: none;
 }
 
-.card-orange .card-decoration {
+.service-card.card-orange .card-decoration {
   background: linear-gradient(135deg, var(--light-orange), var(--accent-orange));
 }
 
-.card-brown .card-decoration {
+.service-card.card-brown .card-decoration {
   background: linear-gradient(135deg, var(--primary-brown), var(--medium-brown));
 }
 
-.card-accent .card-decoration {
+.service-card.card-white .card-decoration {
   background: linear-gradient(135deg, var(--accent-orange), var(--soft-orange));
 }
 
@@ -194,6 +196,8 @@
 .cta-arrow {
   transition: transform var(--transition-base);
   font-size: 1.25rem;
+  display: flex;
+  align-items: center;
 }
 
 .service-cta:hover .cta-arrow {
@@ -258,18 +262,27 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+
+/* Telas grandes (Desktop) - 3 colunas */
+@media (min-width: 1280px) {
   .services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+/* Telas médias (Tablet landscape) - 2 colunas */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Telas pequenas (Tablet portrait e mobile) - 1 coluna */
+@media (max-width: 767px) {
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
   }
-  
+    
   .service-card {
     padding: var(--spacing-md) var(--spacing-md);
   }

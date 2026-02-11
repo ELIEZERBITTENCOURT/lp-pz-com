@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Lightbulb, GraduationCap, FileText, PenTool } from 'lucide-react';
+import { ArrowRight, Lightbulb } from 'lucide-react';
 import '../styles/Services.css';
+import { servicesData } from '../data/api';
 
 const Services = () => {
   const [visibleCards, setVisibleCards] = useState([]);
@@ -27,45 +28,6 @@ const Services = () => {
     return () => observer.disconnect();
   }, []);
 
-  const services = [
-    {
-      icon: FileText,
-      title: 'Revisão Textual',
-      description: 'Análise criteriosa de ortografia, gramática, coesão e coerência. Garantimos que seu texto comunique exatamente o que você deseja, com clareza e profissionalismo.',
-      features: [
-        'Correção ortográfica e gramatical completa',
-        'Aprimoramento de coesão e coerência textual',
-        'Adequação ao público-alvo e contexto',
-        'Sugestões de melhoria estilística'
-      ],
-      color: 'orange'
-    },
-    {
-      icon: GraduationCap,
-      title: 'Formatação Acadêmica',
-      description: 'Formatação completa de trabalhos segundo as normas ABNT. TCCs, dissertações, artigos e monografias com padrão profissional e rigor técnico impecável.',
-      features: [
-        'Normas ABNT rigorosamente atualizadas',
-        'Estruturação de elementos pré e pós-textuais',
-        'Formatação de referências bibliográficas',
-        'Revisão e padronização de citações'
-      ],
-      color: 'brown'
-    },
-    {
-      icon: PenTool,
-      title: 'Textos Institucionais',
-      description: 'Criação e revisão de textos corporativos que transmitem a identidade da sua marca. Da página "Sobre" aos comunicados oficiais, com tom e estilo adequados.',
-      features: [
-        'Textos para websites e páginas institucionais',
-        'Comunicados e relatórios corporativos',
-        'Apresentações e materiais institucionais',
-        'Conteúdo estratégico para redes sociais'
-      ],
-      color: 'accent'
-    }
-  ];
-
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     contactSection?.scrollIntoView({ behavior: 'smooth' });
@@ -87,13 +49,15 @@ const Services = () => {
         </div>
         
         <div className="services-grid">
-          {services.map((service, index) => (
+          {servicesData.map((service, index) => (
             <div
               key={index}
               className={`service-card card-${service.color} ${visibleCards.includes(index) ? 'visible' : ''}`}
             >
               <div className="service-header">
-                <div className="service-icon"><service.icon size={48} color="#f6d32d" /></div>
+                <div className="service-icon">
+                  <service.icon size={38} />
+                </div>
                 <h3 className="service-title">{service.title}</h3>
               </div>
               
@@ -110,7 +74,9 @@ const Services = () => {
               
               <button className="service-cta" onClick={scrollToContact}>
                 <span>Solicitar Orçamento</span>
-                <span className="cta-arrow">→</span>
+                <span className="cta-arrow">
+                  <ArrowRight size={14}/>
+                </span>
               </button>
               
               <div className="card-decoration"></div>
@@ -120,7 +86,9 @@ const Services = () => {
         
         <div className="services-footer-cta">
           <div className="footer-cta-content">
-            <div className="footer-cta-icon"><Lightbulb size={68} color="#f6d32d" /></div>
+            <div className="footer-cta-icon">
+              <Lightbulb size={68} color="var(--soft-orange)"/>
+            </div>
             <div className="footer-cta-text">
               <h3>Não encontrou o que procura?</h3>
               <p>Entre em contato e vamos desenvolver uma solução personalizada para suas necessidades específicas.</p>
