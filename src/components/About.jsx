@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Target, Zap, Handshake, LibraryBig, Trophy, Star } from 'lucide-react';
+import { LibraryBig, Trophy, Star } from 'lucide-react';
 import '../styles/About.css';
+import { valuesData } from '../data/api';
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -24,24 +25,6 @@ const About = () => {
 
     return () => observer.disconnect();
   }, []);
-
-  const values = [
-    {
-      icon: Target,
-      title: 'Precisão',
-      description: 'Atenção meticulosa a cada detalhe do seu texto, garantindo excelência em cada palavra.'
-    },
-    {
-      icon: Zap,
-      title: 'Agilidade',
-      description: 'Prazos respeitados rigorosamente sem jamais comprometer a qualidade do trabalho.'
-    },
-    {
-      icon: Handshake,
-      title: 'Parceria',
-      description: 'Trabalhamos lado a lado com você até alcançar a perfeição desejada.'
-    }
-  ];
 
   return (
     <section id="about" className={`section about ${isVisible ? 'visible' : ''}`} ref={sectionRef}>
@@ -73,9 +56,9 @@ const About = () => {
             </div>
             
             <div className="about-values">
-              {values.map((value, index) => (
+              {valuesData.map((value, index) => (
                 <div key={index} className="value-item">
-                  <div className="value-icon"><value.icon size={48}/></div>
+                  <div className="value-icon"><value.icon size={48} color="var(--primary-brown)"/></div>
                   <div className="value-content">
                     <h4>{value.title}</h4>
                     <p>{value.description}</p>
@@ -87,7 +70,7 @@ const About = () => {
           
           <div className="about-visual">
             <div className="visual-card card-primary">
-              <div className="card-icon"><LibraryBig size={48}/></div>
+              <div className="card-icon"><LibraryBig size={48} color="var(--soft-orange)"/></div>
               <div className="card-data">
                 <div className="card-number">10+</div>
                 <div className="card-label">Anos de Experiência</div>
@@ -95,7 +78,7 @@ const About = () => {
             </div>
             
             <div className="visual-card card-secondary">
-              <div className="card-icon"><Trophy size={48}/></div>
+              <div className="card-icon"><Trophy size={48} color="var(--soft-orange)"/></div>
               <div className="card-data">
                 <div className="card-number">500+</div>
                 <div className="card-label">Projetos Finalizados</div>
@@ -103,9 +86,9 @@ const About = () => {
             </div>
             
             <div className="visual-card card-tertiary">
-              <div className="card-icon"><Star size={48} /></div>
+              <div className="card-icon"><Star size={48} color="var(--soft-orange)"/></div>
               <div className="card-data">
-                <div className="card-number">98%</div>
+                <div className="card-number">99%</div>
                 <div className="card-label">Clientes Satisfeitos</div>
               </div>
             </div>
