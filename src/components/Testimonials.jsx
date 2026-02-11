@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Star } from 'lucide-react';
 import '../styles/Testimonials.css';
+import { testimonialsData } from '../data/api';
 
 const Testimonials = () => {
   const [visibleCards, setVisibleCards] = useState([]);
@@ -27,27 +28,6 @@ const Testimonials = () => {
     return () => observer.disconnect();
   }, []);
 
-  const testimonials = [
-    {
-      name: 'Ana Paula Silva',
-      role: 'Mestranda em Educação',
-      text: 'A revisão e formatação da minha dissertação foram impecáveis. A Pazzini entendeu perfeitamente o que eu precisava e entregou um trabalho de altíssima qualidade. Recomendo fortemente!',
-      rating: 5
-    },
-    {
-      name: 'Carlos Mendes',
-      role: 'Diretor de Marketing',
-      text: 'Precisávamos de textos institucionais que transmitissem a essência da nossa marca. O resultado superou todas as expectativas. Profissionalismo e criatividade em cada palavra.',
-      rating: 5
-    },
-    {
-      name: 'Mariana Costa',
-      role: 'Advogada',
-      text: 'Excelente serviço de revisão. A atenção aos detalhes e o cuidado com a linguagem técnica fizeram toda a diferença nos meus documentos jurídicos. Muito satisfeita!',
-      rating: 5
-    }
-  ];
-
   return (
     <section id="testimonials" className="section testimonials" ref={sectionRef}>
       <div className="container">
@@ -59,7 +39,7 @@ const Testimonials = () => {
         </div>
         
         <div className="testimonials-grid">
-          {testimonials.map((testimonial, index) => (
+          {testimonialsData.map((testimonial, index) => (
             <div
               key={index}
               className={`testimonial-card ${visibleCards.includes(index) ? 'visible' : ''}`}
@@ -68,7 +48,7 @@ const Testimonials = () => {
               
               <div className="testimonial-rating">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <span key={i} className="star"><Star color="#f6d32d" /></span>
+                  <span key={i} className="star"><Star color="var(--soft-orange)" /></span>
                 ))}
               </div>
               
