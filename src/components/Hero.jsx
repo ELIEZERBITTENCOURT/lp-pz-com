@@ -31,7 +31,7 @@ const Hero = () => {
       <div className="container">
         <div className="hero-content">
           <div className="hero-badge">
-            <span className="badge-icon"><Sparkles color="#f5c211" /></span>
+            <span className="badge-icon"><Sparkles color="var(--soft-orange)" /></span>
             <span className="badge-text">Comunicação que transforma ideias em resultados</span>
           </div>
           
@@ -47,7 +47,7 @@ const Hero = () => {
           
           <div className="hero-cta-group">
             <button className="btn btn-primary" onClick={scrollToContact}>
-              Solicitar Diagnóstico Gratuito
+              Solicitar Orçamento Gratuito
             </button>
             <button className="btn btn-secondary" onClick={scrollToServices}>
               Conhecer Serviços
@@ -61,7 +61,7 @@ const Hero = () => {
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <div className="stat-number">98%</div>
+              <div className="stat-number">99%</div>
               <div className="stat-label">Satisfação</div>
             </div>
             <div className="stat-divider"></div>
