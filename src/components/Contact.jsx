@@ -31,7 +31,7 @@ const Contact = () => {
       return;
     }
 
-    // Send via email (mailto)
+    // Send via email 
     const emailSubject = `Solicitação de ${formData.service} - ${formData.name}`;
     const emailBody = `
 Nome: ${formData.name}
@@ -63,7 +63,7 @@ ${formData.message || 'Sem mensagem adicional'}
       ? `Olá! Meu nome é ${formData.name}. Gostaria de saber mais sobre os serviços de ${formData.service || 'revisão textual'}.`
       : 'Olá! Gostaria de saber mais sobre os serviços da Pazzini Comunicacion.';
     
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/55519994103113?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -77,7 +77,7 @@ ${formData.message || 'Sem mensagem adicional'}
         <div className="section-header">
           <h2 className="section-title">Entre em Contato</h2>
           <p className="section-subtitle">
-            Solicite um diagnóstico gratuito ou tire suas dúvidas. Estamos prontos para ajudar!
+            Solicite um orçamento gratuito ou tire suas dúvidas. Estamos prontos para ajudar!
           </p>
         </div>
         
@@ -113,7 +113,7 @@ ${formData.message || 'Sem mensagem adicional'}
                 <div className="method-icon"><AlarmClock size={32}/></div>
                 <div className="method-content">
                   <h4>Horário de Atendimento</h4>
-                  <p>Seg - Sex: 9h às 18h<br/>Sáb: 9h às 13h</p>
+                  <p>Seg - Sex: 8h às 20h30<br/>Sáb: 9h às 18h</p>
                 </div>
               </div>
             </div>
