@@ -1,6 +1,7 @@
 import React from 'react';
 import { AlarmCheck, Mail, MapPin, MessageCircle } from 'lucide-react';
 import '../styles/Footer.css';
+import { EMAIL, WHATSAPP } from '../config/env';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -26,10 +27,10 @@ const Footer = () => {
                 formatação acadêmica e textos institucionais.
               </p>
               <div className="footer-social">
-                <a href="mailto:pazzinicomunicacion@gmail.com" className="social-link" aria-label="E-mail">
+                <a href={`mailto:${EMAIL}`} className="social-link" aria-label="E-mail">
                   <Mail/>
                 </a>
-                <a href="https://wa.me/55519994103113" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">
+                <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">
                   <MessageCircle/>
                 </a>
               </div>
@@ -92,8 +93,8 @@ const Footer = () => {
               <ul className="footer-contact">
                 <li>
                   <span className="contact-icon"><Mail size={16}/></span>
-                  <a href="mailto:pazzinicomunicacion@gmail.com">
-                    pazzinicomunicacion@gmail.com
+                  <a href={`mailto:${EMAIL}`}>
+                    {EMAIL}
                   </a>
                 </li>
                 <li>

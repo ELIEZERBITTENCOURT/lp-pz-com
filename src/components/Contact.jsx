@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { AlarmClock, Mail, MessageCircleMore, LockKeyhole } from 'lucide-react';
 import '../styles/Contact.css';
+import { EMAIL, WHATSAPP } from '../config/env';
 
 const Contact = () => {
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -43,7 +45,7 @@ Mensagem:
 ${formData.message || 'Sem mensagem adicional'}
     `.trim();
 
-    window.location.href = `mailto:pazzinicomunicacion@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
     setFormStatus('success');
     setTimeout(() => {
@@ -63,7 +65,7 @@ ${formData.message || 'Sem mensagem adicional'}
       ? `Olá! Meu nome é ${formData.name}. Gostaria de saber mais sobre os serviços de ${formData.service || 'revisão textual'}.`
       : 'Olá! Gostaria de saber mais sobre os serviços da Pazzini Comunicacion.';
     
-    const whatsappUrl = `https://wa.me/55519994103113?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -93,8 +95,8 @@ ${formData.message || 'Sem mensagem adicional'}
                 <div className="method-icon"><Mail size={32}/></div>
                 <div className="method-content">
                   <h4>E-mail</h4>
-                  <a href="mailto:pazzinicomunicacion@gmail.com">
-                    pazzinicomunicacion@gmail.com
+                  <a href={`mailto:${EMAIL}`}>
+                    {EMAIL}
                   </a>
                 </div>
               </div>
