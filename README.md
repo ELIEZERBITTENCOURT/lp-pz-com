@@ -460,8 +460,6 @@ Adicione em `index.html` antes do `</head>`:
 
 ```
 v1.0.0 - Landing page inicial
-v1.1.0 - Adição de blog
-v1.2.0 - Integração com CRM
 ```
 
 ---
