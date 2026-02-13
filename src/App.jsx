@@ -6,7 +6,6 @@ import Benefits from './components/Benefits';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import { Analytics } from "@vercel/analytics/next"
 import './styles-global.css';
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
       <Testimonials />
       <Contact />
       <Footer />
-      <Analytics />
     </div>
   );
 }
