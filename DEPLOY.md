@@ -1,4 +1,4 @@
-# 🚀 Guia de Deploy - Pazzini Comunicacion
+# Guia de Deploy - Pazzini Comunicacion
 
 ## Preparação Pré-Deploy
 
@@ -6,27 +6,12 @@
 
 Antes de fazer o deploy, certifique-se de:
 
-- [ ] Atualizar o número do WhatsApp em `Contact.jsx` (linha 50)
-- [ ] Configurar o e-mail correto (já configurado: pazzinicomunicacion@gmail.com)
+- [ ] Atualizar o número do WhatsApp em `Contact.jsx` (no .env)
+- [ ] Configurar o e-mail correto (no .env)
 - [ ] Revisar todos os textos e conteúdos
-- [ ] Testar formulário de contato
+- [ ] Testar formulário de contato (utilizado no projeto Web3Forms - https://web3forms.com,)
 - [ ] Testar responsividade em diferentes dispositivos
 - [ ] Verificar todos os links
-- [ ] Otimizar imagens (se houver)
-
-### 2. Atualizar Número do WhatsApp
-
-No arquivo `src/components/Contact/Contact.jsx`, linha 50:
-
-```javascript
-// Substitua 5511999999999 pelo número real
-const whatsappUrl = `https://wa.me/SEUNUMEROAQUI?text=${encodeURIComponent(message)}`;
-```
-
-Formato: código do país + DDD + número (sem espaços ou caracteres especiais)
-Exemplo: 5511987654321
-
----
 
 ## Deploy na Vercel (Recomendado)
 
@@ -104,7 +89,7 @@ Adicione:
 
 ```json
 {
-  "homepage": "https://seuusuario.github.io/pazzini-landing",
+  "homepage": "https://seuusuario.github.io/lp-pz-com",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
@@ -117,7 +102,7 @@ Adicione:
 ```javascript
 export default defineConfig({
   plugins: [react()],
-  base: '/pazzini-landing/', // Nome do repositório
+  base: '/lp-pz-com/', // Nome do repositório
   build: {
     outDir: 'dist'
   }
@@ -173,25 +158,6 @@ npm run deploy
   gtag('config', 'G-XXXXXXXXXX');
 </script>
 ```
-
-### Facebook Pixel (Opcional)
-
-```html
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', 'YOUR_PIXEL_ID');
-fbq('track', 'PageView');
-</script>
-```
-
 ---
 
 ## SSL/HTTPS
@@ -300,28 +266,15 @@ Sempre mantenha:
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
 ```
-
-### Formulário não envia
-
-1. Verifique configuração do e-mail
-2. Teste o mailto manualmente
-3. Verifique console do navegador
-
-### Imagens não carregam
-
-1. Verifique caminhos relativos
-2. Certifique-se que estão em `/public`
-3. Use caminhos absolutos a partir de `/`
-
 ---
 
 ## Suporte
 
 Para dúvidas sobre o deploy:
 
-- 📧 Documentação Vercel: [vercel.com/docs](https://vercel.com/docs)
-- 📧 Documentação Netlify: [docs.netlify.com](https://docs.netlify.com)
-- 💬 GitHub Issues: Abra uma issue no repositório
+- Documentação Vercel: [vercel.com/docs](https://vercel.com/docs)
+- Documentação Netlify: [docs.netlify.com](https://docs.netlify.com)
+- GitHub Issues: Abra uma issue no repositório
 
 ---
 
@@ -339,4 +292,4 @@ Após deploy bem-sucedido:
 
 ---
 
-**Boa sorte com o deploy! 🚀**
+**Boa sorte com o deploy!**
