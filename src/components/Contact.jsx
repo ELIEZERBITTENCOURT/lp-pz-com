@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AlarmClock, Mail, MessageCircleMore, LockKeyhole } from 'lucide-react';
 import '../styles/Contact.css';
-import { EMAIL, WHATSAPP } from '../config/env';
+import { EMAIL, WHATSAPP, WEBFORM_KEY } from '../config/env';
 
 const Contact = () => {
 
@@ -14,6 +14,7 @@ const Contact = () => {
   });
 
   const [formStatus, setFormStatus] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,7 +24,7 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Validate form
@@ -33,33 +34,61 @@ const Contact = () => {
       return;
     }
 
-    // Send via email 
-    const emailSubject = `Solicitação de ${formData.service} - ${formData.name}`;
-    const emailBody = `
-Nome: ${formData.name}
-Email: ${formData.email}
-Telefone: ${formData.phone || 'Não informado'}
-Serviço: ${formData.service}
+    setIsSubmitting(true);
 
-Mensagem:
-${formData.message || 'Sem mensagem adicional'}
-    `.trim();
+    try {
+     // Preparar dados para Web3Forms
+      const web3FormsData = {
+        access_key: WEBFORM_KEY,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || 'Não informado',
+        service: formData.service,
+        message: formData.message || 'Sem mensagem adicional',
+        subject: `Novo Lead - ${formData.service}`,
+        from_name: 'Pazzini Comunicacion - Website'
+      };
 
-    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-
-    setFormStatus('success');
-    setTimeout(() => {
-      setFormStatus('');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: ''
+      // Enviar para Web3Forms
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(web3FormsData)
       });
-    }, 3000);
+
+      const result = await response.json();
+
+      if (result.success) {
+        setFormStatus('success');
+        
+        // Limpar formulário
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+
+        // Resetar status após 5 segundos
+        setTimeout(() => setFormStatus(''), 5000);
+      } else {
+        setFormStatus('error');
+        setTimeout(() => setFormStatus(''), 3000);
+      }
+    } catch (error) {
+      console.error('Erro ao enviar:', error);
+      setFormStatus('error');
+      setTimeout(() => setFormStatus(''), 3000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
+  // Enviar para Whatsapp
   const handleWhatsApp = () => {
     const message = formData.name 
       ? `Olá! Meu nome é ${formData.name}. Gostaria de saber mais sobre os serviços de ${formData.service || 'revisão textual'}.`
@@ -141,6 +170,7 @@ ${formData.message || 'Sem mensagem adicional'}
                   onChange={handleChange}
                   placeholder="Seu nome completo"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               
@@ -154,6 +184,7 @@ ${formData.message || 'Sem mensagem adicional'}
                   onChange={handleChange}
                   placeholder="seu@email.com"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               
@@ -166,6 +197,7 @@ ${formData.message || 'Sem mensagem adicional'}
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="(11) 99999-9999"
+                  disabled={isSubmitting}
                 />
               </div>
               
@@ -177,6 +209,7 @@ ${formData.message || 'Sem mensagem adicional'}
                   value={formData.service}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 >
                   <option value="">Selecione um serviço</option>
                   <option value="Revisão Textual">Revisão Textual</option>
@@ -195,6 +228,7 @@ ${formData.message || 'Sem mensagem adicional'}
                   onChange={handleChange}
                   placeholder="Conte-nos mais sobre seu projeto..."
                   rows="4"
+                  disabled={isSubmitting}
                 ></textarea>
               </div>
               
@@ -210,8 +244,8 @@ ${formData.message || 'Sem mensagem adicional'}
                 </div>
               )}
               
-              <button type="submit" className="btn btn-primary btn-submit">
-                Enviar Mensagem
+              <button type="submit" className="btn btn-primary btn-submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
               </button>
             </form>
           </div>
